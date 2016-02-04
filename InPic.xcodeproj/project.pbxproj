@@ -14,6 +14,7 @@
 		795010201C6414380095FD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7950101E1C6414380095FD6F /* LaunchScreen.storyboard */; };
 		7950102B1C6414380095FD6F /* InPicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950102A1C6414380095FD6F /* InPicTests.swift */; };
 		795010361C6414380095FD6F /* InPicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010351C6414380095FD6F /* InPicUITests.swift */; };
+		795010441C6414430095FD6F /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795010431C6414430095FD6F /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		795010311C6414380095FD6F /* InPicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InPicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		795010351C6414380095FD6F /* InPicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPicUITests.swift; sourceTree = "<group>"; };
 		795010371C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		795010431C6414430095FD6F /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				795010441C6414430095FD6F /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +100,7 @@
 		795010141C6414380095FD6F /* InPic */ = {
 			isa = PBXGroup;
 			children = (
+				795010431C6414430095FD6F /* Firebase.framework */,
 				795010151C6414380095FD6F /* AppDelegate.swift */,
 				795010171C6414380095FD6F /* ViewController.swift */,
 				795010191C6414380095FD6F /* Main.storyboard */,
@@ -399,6 +403,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InPic",
+				);
 				INFOPLIST_FILE = InPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPic;
@@ -410,6 +418,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InPic",
+				);
 				INFOPLIST_FILE = InPic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPic;
