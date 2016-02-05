@@ -8,13 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		795010161C6414380095FD6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010151C6414380095FD6F /* AppDelegate.swift */; };
-		795010181C6414380095FD6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010171C6414380095FD6F /* ViewController.swift */; };
+		795010181C6414380095FD6F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010171C6414380095FD6F /* LoginViewController.swift */; };
 		7950101B1C6414380095FD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795010191C6414380095FD6F /* Main.storyboard */; };
 		7950101D1C6414380095FD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7950101C1C6414380095FD6F /* Assets.xcassets */; };
 		795010201C6414380095FD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7950101E1C6414380095FD6F /* LaunchScreen.storyboard */; };
 		7950102B1C6414380095FD6F /* InPicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950102A1C6414380095FD6F /* InPicTests.swift */; };
 		795010361C6414380095FD6F /* InPicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010351C6414380095FD6F /* InPicUITests.swift */; };
 		795010441C6414430095FD6F /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795010431C6414430095FD6F /* Firebase.framework */; };
+		A209D05F1C64171A004D922D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D05E1C64171A004D922D /* User.swift */; };
+		A209D0621C641733004D922D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0611C641733004D922D /* Comment.swift */; };
+		A209D0641C641738004D922D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0631C641738004D922D /* Photo.swift */; };
+		A209D0661C64173D004D922D /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0651C64173D004D922D /* Follower.swift */; };
+		A209D0681C641744004D922D /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0671C641744004D922D /* Like.swift */; };
+		A209D06E1C641886004D922D /* MainFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D06D1C641886004D922D /* MainFeedViewController.swift */; };
+		A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */; };
+		A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0711C641FD3004D922D /* ProfileViewController.swift */; };
+		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,7 @@
 /* Begin PBXFileReference section */
 		795010121C6414380095FD6F /* InPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795010151C6414380095FD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		795010171C6414380095FD6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		795010171C6414380095FD6F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7950101A1C6414380095FD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7950101C1C6414380095FD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7950101F1C6414380095FD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +58,15 @@
 		795010351C6414380095FD6F /* InPicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPicUITests.swift; sourceTree = "<group>"; };
 		795010371C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795010431C6414430095FD6F /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		A209D05E1C64171A004D922D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A209D0611C641733004D922D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		A209D0631C641738004D922D /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		A209D0651C64173D004D922D /* Follower.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
+		A209D0671C641744004D922D /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		A209D06D1C641886004D922D /* MainFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedViewController.swift; sourceTree = "<group>"; };
+		A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
+		A209D0711C641FD3004D922D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		A209D0731C642013004D922D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +120,9 @@
 			children = (
 				795010431C6414430095FD6F /* Firebase.framework */,
 				795010151C6414380095FD6F /* AppDelegate.swift */,
-				795010171C6414380095FD6F /* ViewController.swift */,
-				795010191C6414380095FD6F /* Main.storyboard */,
+				A209D06A1C6417B2004D922D /* View */,
+				A209D0691C641789004D922D /* Controller */,
+				A209D0601C641725004D922D /* Model */,
 				7950101C1C6414380095FD6F /* Assets.xcassets */,
 				7950101E1C6414380095FD6F /* LaunchScreen.storyboard */,
 				795010211C6414380095FD6F /* Info.plist */,
@@ -127,6 +146,38 @@
 				795010371C6414380095FD6F /* Info.plist */,
 			);
 			path = InPicUITests;
+			sourceTree = "<group>";
+		};
+		A209D0601C641725004D922D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A209D05E1C64171A004D922D /* User.swift */,
+				A209D0611C641733004D922D /* Comment.swift */,
+				A209D0631C641738004D922D /* Photo.swift */,
+				A209D0651C64173D004D922D /* Follower.swift */,
+				A209D0671C641744004D922D /* Like.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A209D0691C641789004D922D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				795010171C6414380095FD6F /* LoginViewController.swift */,
+				A209D06D1C641886004D922D /* MainFeedViewController.swift */,
+				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
+				A209D0711C641FD3004D922D /* ProfileViewController.swift */,
+				A209D0731C642013004D922D /* DetailImageViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		A209D06A1C6417B2004D922D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				795010191C6414380095FD6F /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +311,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				795010181C6414380095FD6F /* ViewController.swift in Sources */,
+				795010181C6414380095FD6F /* LoginViewController.swift in Sources */,
+				A209D0681C641744004D922D /* Like.swift in Sources */,
+				A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */,
+				A209D0661C64173D004D922D /* Follower.swift in Sources */,
 				795010161C6414380095FD6F /* AppDelegate.swift in Sources */,
+				A209D06E1C641886004D922D /* MainFeedViewController.swift in Sources */,
+				A209D05F1C64171A004D922D /* User.swift in Sources */,
+				A209D0621C641733004D922D /* Comment.swift in Sources */,
+				A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */,
+				A209D0641C641738004D922D /* Photo.swift in Sources */,
+				A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,6 +468,7 @@
 					"$(PROJECT_DIR)/InPic",
 				);
 				INFOPLIST_FILE = InPic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +484,7 @@
 					"$(PROJECT_DIR)/InPic",
 				);
 				INFOPLIST_FILE = InPic/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,6 +556,7 @@
 				7950103C1C6414380095FD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7950103D1C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicTests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +565,7 @@
 				7950103F1C6414380095FD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		795010401C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicUITests" */ = {
 			isa = XCConfigurationList;
@@ -510,6 +574,7 @@
 				795010421C6414380095FD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
