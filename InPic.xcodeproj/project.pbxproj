@@ -12,8 +12,6 @@
 		7950101B1C6414380095FD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795010191C6414380095FD6F /* Main.storyboard */; };
 		7950101D1C6414380095FD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7950101C1C6414380095FD6F /* Assets.xcassets */; };
 		795010201C6414380095FD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7950101E1C6414380095FD6F /* LaunchScreen.storyboard */; };
-		7950102B1C6414380095FD6F /* InPicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7950102A1C6414380095FD6F /* InPicTests.swift */; };
-		795010361C6414380095FD6F /* InPicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795010351C6414380095FD6F /* InPicUITests.swift */; };
 		795010441C6414430095FD6F /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 795010431C6414430095FD6F /* Firebase.framework */; };
 		A209D05F1C64171A004D922D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D05E1C64171A004D922D /* User.swift */; };
 		A209D0621C641733004D922D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0611C641733004D922D /* Comment.swift */; };
@@ -26,23 +24,6 @@
 		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		795010271C6414380095FD6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7950100A1C6414380095FD6F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 795010111C6414380095FD6F;
-			remoteInfo = InPic;
-		};
-		795010321C6414380095FD6F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 7950100A1C6414380095FD6F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 795010111C6414380095FD6F;
-			remoteInfo = InPic;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		795010121C6414380095FD6F /* InPic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InPic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		795010151C6414380095FD6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,12 +32,6 @@
 		7950101C1C6414380095FD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7950101F1C6414380095FD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		795010211C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		795010261C6414380095FD6F /* InPicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InPicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7950102A1C6414380095FD6F /* InPicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPicTests.swift; sourceTree = "<group>"; };
-		7950102C1C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		795010311C6414380095FD6F /* InPicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InPicUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		795010351C6414380095FD6F /* InPicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InPicUITests.swift; sourceTree = "<group>"; };
-		795010371C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		795010431C6414430095FD6F /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
 		A209D05E1C64171A004D922D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A209D0611C641733004D922D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -78,20 +53,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		795010231C6414380095FD6F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7950102E1C6414380095FD6F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -99,8 +60,6 @@
 			isa = PBXGroup;
 			children = (
 				795010141C6414380095FD6F /* InPic */,
-				795010291C6414380095FD6F /* InPicTests */,
-				795010341C6414380095FD6F /* InPicUITests */,
 				795010131C6414380095FD6F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -109,8 +68,6 @@
 			isa = PBXGroup;
 			children = (
 				795010121C6414380095FD6F /* InPic.app */,
-				795010261C6414380095FD6F /* InPicTests.xctest */,
-				795010311C6414380095FD6F /* InPicUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,24 +85,6 @@
 				795010211C6414380095FD6F /* Info.plist */,
 			);
 			path = InPic;
-			sourceTree = "<group>";
-		};
-		795010291C6414380095FD6F /* InPicTests */ = {
-			isa = PBXGroup;
-			children = (
-				7950102A1C6414380095FD6F /* InPicTests.swift */,
-				7950102C1C6414380095FD6F /* Info.plist */,
-			);
-			path = InPicTests;
-			sourceTree = "<group>";
-		};
-		795010341C6414380095FD6F /* InPicUITests */ = {
-			isa = PBXGroup;
-			children = (
-				795010351C6414380095FD6F /* InPicUITests.swift */,
-				795010371C6414380095FD6F /* Info.plist */,
-			);
-			path = InPicUITests;
 			sourceTree = "<group>";
 		};
 		A209D0601C641725004D922D /* Model */ = {
@@ -200,42 +139,6 @@
 			productReference = 795010121C6414380095FD6F /* InPic.app */;
 			productType = "com.apple.product-type.application";
 		};
-		795010251C6414380095FD6F /* InPicTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 7950103D1C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicTests" */;
-			buildPhases = (
-				795010221C6414380095FD6F /* Sources */,
-				795010231C6414380095FD6F /* Frameworks */,
-				795010241C6414380095FD6F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				795010281C6414380095FD6F /* PBXTargetDependency */,
-			);
-			name = InPicTests;
-			productName = InPicTests;
-			productReference = 795010261C6414380095FD6F /* InPicTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		795010301C6414380095FD6F /* InPicUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 795010401C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicUITests" */;
-			buildPhases = (
-				7950102D1C6414380095FD6F /* Sources */,
-				7950102E1C6414380095FD6F /* Frameworks */,
-				7950102F1C6414380095FD6F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				795010331C6414380095FD6F /* PBXTargetDependency */,
-			);
-			name = InPicUITests;
-			productName = InPicUITests;
-			productReference = 795010311C6414380095FD6F /* InPicUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,14 +151,6 @@
 				TargetAttributes = {
 					795010111C6414380095FD6F = {
 						CreatedOnToolsVersion = 7.3;
-					};
-					795010251C6414380095FD6F = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 795010111C6414380095FD6F;
-					};
-					795010301C6414380095FD6F = {
-						CreatedOnToolsVersion = 7.3;
-						TestTargetID = 795010111C6414380095FD6F;
 					};
 				};
 			};
@@ -273,8 +168,6 @@
 			projectRoot = "";
 			targets = (
 				795010111C6414380095FD6F /* InPic */,
-				795010251C6414380095FD6F /* InPicTests */,
-				795010301C6414380095FD6F /* InPicUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,20 +180,6 @@
 				795010201C6414380095FD6F /* LaunchScreen.storyboard in Resources */,
 				7950101D1C6414380095FD6F /* Assets.xcassets in Resources */,
 				7950101B1C6414380095FD6F /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		795010241C6414380095FD6F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7950102F1C6414380095FD6F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,36 +204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		795010221C6414380095FD6F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7950102B1C6414380095FD6F /* InPicTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7950102D1C6414380095FD6F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				795010361C6414380095FD6F /* InPicUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		795010281C6414380095FD6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 795010111C6414380095FD6F /* InPic */;
-			targetProxy = 795010271C6414380095FD6F /* PBXContainerItemProxy */;
-		};
-		795010331C6414380095FD6F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 795010111C6414380095FD6F /* InPic */;
-			targetProxy = 795010321C6414380095FD6F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		795010191C6414380095FD6F /* Main.storyboard */ = {
@@ -412,7 +262,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -491,52 +341,6 @@
 			};
 			name = Release;
 		};
-		7950103E1C6414380095FD6F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = InPicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPicTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InPic.app/InPic";
-			};
-			name = Debug;
-		};
-		7950103F1C6414380095FD6F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = InPicTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPicTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InPic.app/InPic";
-			};
-			name = Release;
-		};
-		795010411C6414380095FD6F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = InPicUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPicUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = InPic;
-			};
-			name = Debug;
-		};
-		795010421C6414380095FD6F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = InPicUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ethan.InPicUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = InPic;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -554,24 +358,6 @@
 			buildConfigurations = (
 				7950103B1C6414380095FD6F /* Debug */,
 				7950103C1C6414380095FD6F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		7950103D1C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				7950103E1C6414380095FD6F /* Debug */,
-				7950103F1C6414380095FD6F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		795010401C6414380095FD6F /* Build configuration list for PBXNativeTarget "InPicUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				795010411C6414380095FD6F /* Debug */,
-				795010421C6414380095FD6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
