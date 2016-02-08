@@ -22,6 +22,8 @@
 		A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */; };
 		A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0711C641FD3004D922D /* ProfileViewController.swift */; };
 		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
+		A209D0761C642572004D922D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0751C642572004D922D /* Post.swift */; };
+		A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0791C643BFB004D922D /* CommentTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFeedTableViewCell.swift; sourceTree = "<group>"; };
 		A209D0711C641FD3004D922D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		A209D0731C642013004D922D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
+		A209D0751C642572004D922D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A209D0791C643BFB004D922D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 			children = (
 				A209D05E1C64171A004D922D /* User.swift */,
 				A209D0611C641733004D922D /* Comment.swift */,
+				A209D0751C642572004D922D /* Post.swift */,
 				A209D0631C641738004D922D /* Photo.swift */,
 				A209D0651C64173D004D922D /* Follower.swift */,
 				A209D0671C641744004D922D /* Like.swift */,
@@ -107,6 +112,7 @@
 				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
 				A209D0711C641FD3004D922D /* ProfileViewController.swift */,
 				A209D0731C642013004D922D /* DetailImageViewController.swift */,
+				A209D0791C643BFB004D922D /* CommentTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -193,10 +199,12 @@
 				795010181C6414380095FD6F /* LoginViewController.swift in Sources */,
 				A209D0681C641744004D922D /* Like.swift in Sources */,
 				A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */,
+				A209D0761C642572004D922D /* Post.swift in Sources */,
 				A209D0661C64173D004D922D /* Follower.swift in Sources */,
 				795010161C6414380095FD6F /* AppDelegate.swift in Sources */,
 				A209D06E1C641886004D922D /* MainFeedViewController.swift in Sources */,
 				A209D05F1C64171A004D922D /* User.swift in Sources */,
+				A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */,
 				A209D0621C641733004D922D /* Comment.swift in Sources */,
 				A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */,
 				A209D0641C641738004D922D /* Photo.swift in Sources */,

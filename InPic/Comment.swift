@@ -8,6 +8,7 @@
 
 import Foundation
 
-class Comment {
-    
+class Comment: NSObject {
+    var text:String?
+    var date:String?
 }

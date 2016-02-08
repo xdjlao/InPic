@@ -1,5 +1,5 @@
 //
-//  User.swift
+//  Post.swift
 //  InPic
 //
 //  Created by Jerry on 2/4/16.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-class User {
-    var username:String?
+class Post: NSObject {
+    var caption:String?
+    var timestamp:NSDate?
 }

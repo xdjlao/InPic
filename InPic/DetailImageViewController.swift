@@ -8,12 +8,39 @@
 
 import UIKit
 
-class DetailImageViewController: UIViewController {
-
+class DetailImageViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    var post:Post?
+    var commentArray = [Comment]()
+    let user = User()
+    let image = Photo()
+    
+    @IBOutlet weak var detailImageView: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tableView.rowHeight = self.tableView.frame.height/5
+        self.tableView.separatorColor = UIColor.clearColor()
+        user.username = "jerlao"
+        image.img = UIImage(named: "image")
+        
+        detailImageView.image = image.img
+        
+        for i in 1...20 {
+            let comment = Comment()
+            comment.text = "Comment \(i)"
+
+            let date = NSDate()
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Day, .Month, .Year], fromDate: date)
+
+            comment.date = "\(components.month)/\(components.day)/\(components.year)"
+            
+            commentArray.append(comment)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +48,21 @@ class DetailImageViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return commentArray.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("DetailCommentCell") as! CommentTableViewCell
+        let comment = self.commentArray[indexPath.row]
+        cell.usernameLabel.text = self.user.username
+        cell.dateLabel.text = comment.date
+        cell.commentLabel.text = comment.text
+//        if indexPath.row == 0 {
+//            cell.frame = CGRectMake(<#T##x: CGFloat##CGFloat#>, <#T##y: CGFloat##CGFloat#>, <#T##width: CGFloat##CGFloat#>, <#T##height: CGFloat##CGFloat#>)
+//        }
+        return cell
+    }
 
     /*
     // MARK: - Navigation

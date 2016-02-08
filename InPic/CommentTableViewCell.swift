@@ -1,5 +1,5 @@
 //
-//  MainFeedTableViewCell.swift
+//  CommentTableViewCell.swift
 //  InPic
 //
 //  Created by Jerry on 2/4/16.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class MainFeedTableViewCell: UITableViewCell {
+class CommentTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var commentLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
