@@ -7,5 +7,3 @@
 //
 
 import Foundation
-
-let BASE_URL = "https://inpic.firebaseio.com"
