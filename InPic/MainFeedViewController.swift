@@ -8,8 +8,9 @@
 
 import UIKit
 import Firebase
+import ImagePicker
 
-class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ImagePickerDelegate {
     
     var postArray = [Post]()
     
@@ -24,14 +25,14 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         firebaseRoot = Firebase(url: "https://inpic.firebaseio.com/data")
         self.tableView.rowHeight = self.view.frame.height / 3
-//        user.username = "jerlao"
-//        image.img = UIImage(named: "image")
-//        
-//        for i in 1...10 {
-//            let post = Post()
-//            post.caption = "Test post \(i)"
-//            postArray.append(post)
-//        }
+        user.username = "jerlao"
+        image.img = UIImage(named: "image")
+        
+        for i in 1...10 {
+            let post = Post()
+            post.caption = "Test post \(i)"
+            postArray.append(post)
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -66,6 +67,24 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         return cell
     }
     
+    @IBAction func onUploadButtonPressed(sender: UIBarButtonItem) {
+        let imagePickerController = ImagePickerController()
+        imagePickerController.delegate = self
+        presentViewController(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func wrapperDidPress(images: [UIImage]) {
+    
+    }
+    
+    func doneButtonDidPress(images: [UIImage]) {
+        
+    }
+    
+    func cancelButtonDidPress() {
+    
+    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

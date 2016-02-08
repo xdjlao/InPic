@@ -23,7 +23,6 @@
 		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
 		A209D0761C642572004D922D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0751C642572004D922D /* Post.swift */; };
 		A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0791C643BFB004D922D /* CommentTableViewCell.swift */; };
-		A2BE146B1C691C90008380BE /* UploadPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE146A1C691C90008380BE /* UploadPostViewController.swift */; };
 		D3B6AB13F39780695FDDD4C2 /* Pods_InPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA2E01E913767D35D48E399 /* Pods_InPic.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 		A209D0731C642013004D922D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		A209D0751C642572004D922D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A209D0791C643BFB004D922D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
-		A2BE146A1C691C90008380BE /* UploadPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UploadPostViewController.swift; sourceTree = "<group>"; };
 		CCA2E01E913767D35D48E399 /* Pods_InPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEE298C2FE9533FE22A1FE6 /* Pods-InPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPic/Pods-InPic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,7 +127,6 @@
 		A209D0691C641789004D922D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A2BE146A1C691C90008380BE /* UploadPostViewController.swift */,
 				795010171C6414380095FD6F /* LoginViewController.swift */,
 				A209D06D1C641886004D922D /* MainFeedViewController.swift */,
 				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
@@ -281,7 +278,6 @@
 				A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */,
 				A209D0621C641733004D922D /* Comment.swift in Sources */,
 				A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */,
-				A2BE146B1C691C90008380BE /* UploadPostViewController.swift in Sources */,
 				A209D0641C641738004D922D /* Photo.swift in Sources */,
 				A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */,
 			);

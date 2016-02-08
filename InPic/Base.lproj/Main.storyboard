@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -62,7 +62,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGT-mi-klG" id="11i-az-rJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n7A-kF-TWf">
@@ -154,7 +154,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="We1-0a-Zuw" id="ues-s2-D8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -239,29 +239,22 @@
                             <constraint firstAttribute="trailing" secondItem="dug-Fj-WMW" secondAttribute="trailing" id="qUt-YS-SIk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Me" id="6Ln-1w-DZ5"/>
+                    <navigationItem key="navigationItem" title="Me" id="6Ln-1w-DZ5">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="HmM-kA-cAs">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lwE-cA-9De">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change Prof Pic"/>
+                                <connections>
+                                    <action selector="editProfilePicTapped:" destination="roP-rG-Z4p" eventType="touchUpInside" id="ytr-Fc-miL"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u6M-Xm-1hE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="885" y="1649"/>
-        </scene>
-        <!--Upload Post View Controller-->
-        <scene sceneID="5KW-Vf-HPw">
-            <objects>
-                <viewController id="4gv-8V-gTl" customClass="UploadPostViewController" customModule="InPic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ezs-Ch-c2d"/>
-                        <viewControllerLayoutGuide type="bottom" id="TUm-6E-LIG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="z8P-Tx-zlS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iFc-27-36l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4338" y="928"/>
         </scene>
         <!--Activity Feed-->
         <scene sceneID="Xha-2I-qc0">
@@ -283,7 +276,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VsP-q9-VaM" id="mtP-mL-jGl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-rQ-nn1">
@@ -321,7 +314,7 @@
                     <navigationItem key="navigationItem" title="Activity Feed" id="jbc-ue-P8t">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="PDu-gA-9VE">
                             <connections>
-                                <segue destination="4gv-8V-gTl" kind="show" identifier="addSegue" id="PWv-kk-PYM"/>
+                                <action selector="onUploadButtonPressed:" destination="f3Z-l9-bwy" id="bM3-m9-9Pb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

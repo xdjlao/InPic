@@ -62,6 +62,15 @@ class DetailImageViewController: UIViewController, UITableViewDataSource, UITabl
 //        }
         return cell
     }
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let dragPosition = self.tableView.contentOffset.y
+        let imageHeight = self.detailImageView.frame.size.height
+        let tableHeight = self.tableView.frame.size.height
+        self.detailImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, imageHeight - dragPosition)
+        self.tableView.frame = CGRectMake(0, self.detailImageView.frame.size.height, self.view.frame.size.width, tableHeight + dragPosition)
+        print(self.tableView.contentOffset.y)
+    }
 
     /*
     // MARK: - Navigation
