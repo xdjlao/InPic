@@ -9,5 +9,10 @@
 import Foundation
 
 class User {
-    var username:String?
+    var username: String
+
+    init(username: String)
+    {
+        self.username = username
+    }
 }

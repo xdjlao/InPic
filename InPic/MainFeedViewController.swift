@@ -7,29 +7,32 @@
 //
 
 import UIKit
+import Firebase
 
 class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var postArray = [Post]()
     
-    let user = User()
+    let user = User(username: "")
     let image = Photo()
+
+    var firebaseRoot = Firebase()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        firebaseRoot = Firebase(url: "https://inpic.firebaseio.com/data")
         self.tableView.rowHeight = self.view.frame.height / 3
-        user.username = "jerlao"
-        image.img = UIImage(named: "image")
-        
-        for i in 1...10 {
-            let post = Post()
-            post.caption = "Test post \(i)"
-            postArray.append(post)
-        }
-        
+//        user.username = "jerlao"
+//        image.img = UIImage(named: "image")
+//        
+//        for i in 1...10 {
+//            let post = Post()
+//            post.caption = "Test post \(i)"
+//            postArray.append(post)
+//        }
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
