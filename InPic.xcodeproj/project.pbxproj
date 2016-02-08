@@ -23,6 +23,7 @@
 		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
 		A209D0761C642572004D922D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0751C642572004D922D /* Post.swift */; };
 		A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0791C643BFB004D922D /* CommentTableViewCell.swift */; };
+		A2BE146D1C692F43008380BE /* ViewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BE146C1C692F43008380BE /* ViewPostViewController.swift */; };
 		D3B6AB13F39780695FDDD4C2 /* Pods_InPic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA2E01E913767D35D48E399 /* Pods_InPic.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		A209D0731C642013004D922D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		A209D0751C642572004D922D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A209D0791C643BFB004D922D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A2BE146C1C692F43008380BE /* ViewPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPostViewController.swift; sourceTree = "<group>"; };
 		CCA2E01E913767D35D48E399 /* Pods_InPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECEE298C2FE9533FE22A1FE6 /* Pods-InPic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPic.debug.xcconfig"; path = "Pods/Target Support Files/Pods-InPic/Pods-InPic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -129,6 +131,7 @@
 			children = (
 				795010171C6414380095FD6F /* LoginViewController.swift */,
 				A209D06D1C641886004D922D /* MainFeedViewController.swift */,
+				A2BE146C1C692F43008380BE /* ViewPostViewController.swift */,
 				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
 				A209D0711C641FD3004D922D /* ProfileViewController.swift */,
 				A209D0731C642013004D922D /* DetailImageViewController.swift */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				795010181C6414380095FD6F /* LoginViewController.swift in Sources */,
+				A2BE146D1C692F43008380BE /* ViewPostViewController.swift in Sources */,
 				A209D0681C641744004D922D /* Like.swift in Sources */,
 				A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */,
 				A209D0761C642572004D922D /* Post.swift in Sources */,

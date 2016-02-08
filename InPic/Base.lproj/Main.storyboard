@@ -259,6 +259,38 @@
             </objects>
             <point key="canvasLocation" x="885" y="1649"/>
         </scene>
+        <!--View Post View Controller-->
+        <scene sceneID="BDR-6h-Ll8">
+            <objects>
+                <viewController id="kxZ-BH-1Qj" customClass="ViewPostViewController" customModule="InPic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OSw-aB-JUO"/>
+                        <viewControllerLayoutGuide type="bottom" id="zmQ-Rl-CNf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DSz-Lm-JBb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VpF-cY-HxR">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="VpF-cY-HxR" secondAttribute="trailing" id="0Cv-Lf-ndW"/>
+                            <constraint firstItem="VpF-cY-HxR" firstAttribute="top" secondItem="DSz-Lm-JBb" secondAttribute="top" id="EK8-e5-V3y"/>
+                            <constraint firstItem="VpF-cY-HxR" firstAttribute="leading" secondItem="DSz-Lm-JBb" secondAttribute="leading" id="f93-Ck-3BU"/>
+                            <constraint firstItem="zmQ-Rl-CNf" firstAttribute="top" secondItem="VpF-cY-HxR" secondAttribute="bottom" id="gI9-Vk-HR8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="VpF-cY-HxR" id="N4y-UJ-P2q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TJy-ln-ALI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4338" y="981"/>
+        </scene>
         <!--Activity Feed-->
         <scene sceneID="Xha-2I-qc0">
             <objects>
@@ -324,6 +356,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="QGo-Tz-3NL" id="QqC-2O-eyG"/>
+                        <segue destination="kxZ-BH-1Qj" kind="showDetail" identifier="ShowDetail" id="s3Z-VK-VBN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFn-4R-lgv" userLabel="First Responder" sceneMemberID="firstResponder"/>

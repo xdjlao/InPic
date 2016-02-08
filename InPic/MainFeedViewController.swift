@@ -78,7 +78,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func doneButtonDidPress(images: [UIImage]) {
-        print(images)
+        self.performSegueWithIdentifier("ShowDetail", sender: self)
     }
     
     func cancelButtonDidPress() {
@@ -153,6 +153,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             let destination = segue.destinationViewController as! DetailImageViewController
             let indexPath = self.tableView.indexPathForCell(sender as! MainFeedTableViewCell)
             destination.post = self.postArray[(indexPath?.section)!]
+        } else if segue.identifier == "ShowDetail" {
+            let destination = segue.destinationViewController as! ShowPostViewController
+            destination.backgroundPostImage = 
         } else {
             //
         }
