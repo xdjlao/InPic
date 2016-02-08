@@ -12,7 +12,7 @@ class DetailImageViewController: UIViewController, UITableViewDataSource, UITabl
     
     var post:Post?
     var commentArray = [Comment]()
-    let user = User()
+    let user = User(username: "jerlao")
     let image = Photo()
     
     @IBOutlet weak var detailImageView: UIImageView!
@@ -24,7 +24,6 @@ class DetailImageViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = self.tableView.frame.height/5
         self.tableView.separatorColor = UIColor.clearColor()
-        user.username = "jerlao"
         image.img = UIImage(named: "image")
         
         detailImageView.image = image.img

@@ -245,10 +245,10 @@
             </objects>
             <point key="canvasLocation" x="885" y="1649"/>
         </scene>
-        <!--View Controller-->
+        <!--Upload Post View Controller-->
         <scene sceneID="5KW-Vf-HPw">
             <objects>
-                <viewController id="4gv-8V-gTl" sceneMemberID="viewController">
+                <viewController id="4gv-8V-gTl" customClass="UploadPostViewController" customModule="InPic" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ezs-Ch-c2d"/>
                         <viewControllerLayoutGuide type="bottom" id="TUm-6E-LIG"/>
