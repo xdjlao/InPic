@@ -284,7 +284,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backgroundPostImage" destination="VpF-cY-HxR" id="kag-Ec-Mlr"/>
+                        <outlet property="backgroundImage" destination="VpF-cY-HxR" id="N4y-UJ-P2q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJy-ln-ALI" userLabel="First Responder" sceneMemberID="firstResponder"/>

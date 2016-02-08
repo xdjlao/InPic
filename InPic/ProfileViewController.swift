@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import ImagePicker
 
-class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ProfileViewController: UIViewController, ImagePickerDelegate {
     
     @IBOutlet weak var profileImage: UIImageView!
     
-    let imagePicker = UIImagePickerController()
+    let imagePicker = ImagePickerController()
     
     override func viewDidLoad() {
         
@@ -26,8 +27,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func editProfilePicTapped(sender: AnyObject) {
         
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
@@ -39,18 +38,18 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
+    func wrapperDidPress(images: [UIImage]) {
+        
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            profileImage.contentMode = .ScaleAspectFit
-            profileImage.image = pickedImage
+    func doneButtonDidPress(images: [UIImage]) { dismissViewControllerAnimated(true) { () -> Void in
+        self.profileImage.image = images.first
         }
-        
-        dismissViewControllerAnimated(true, completion: nil)
-        
+        print(images)
     }
     
+    func cancelButtonDidPress() {
+        
+}
+
 }

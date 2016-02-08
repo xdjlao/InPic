@@ -12,6 +12,7 @@ class ViewPostViewController: UIViewController {
 
     var postImage:UIImage?
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
