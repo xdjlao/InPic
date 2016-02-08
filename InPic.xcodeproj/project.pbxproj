@@ -12,6 +12,9 @@
 		7950101B1C6414380095FD6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 795010191C6414380095FD6F /* Main.storyboard */; };
 		7950101D1C6414380095FD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7950101C1C6414380095FD6F /* Assets.xcassets */; };
 		795010201C6414380095FD6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7950101E1C6414380095FD6F /* LaunchScreen.storyboard */; };
+		79EF1E051C693A230021968F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EF1E041C693A230021968F /* Constants.swift */; };
+		79EF1E071C693A3D0021968F /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EF1E061C693A3D0021968F /* DataService.swift */; };
+		79EF1E091C6957E00021968F /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79EF1E081C6957E00021968F /* CreateAccountViewController.swift */; };
 		A209D05F1C64171A004D922D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D05E1C64171A004D922D /* User.swift */; };
 		A209D0621C641733004D922D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0611C641733004D922D /* Comment.swift */; };
 		A209D0641C641738004D922D /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0631C641738004D922D /* Photo.swift */; };
@@ -34,6 +37,9 @@
 		7950101C1C6414380095FD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7950101F1C6414380095FD6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		795010211C6414380095FD6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79EF1E041C693A230021968F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79EF1E061C693A3D0021968F /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		79EF1E081C6957E00021968F /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		8E13FC3841A8898DC9402C5C /* Pods-InPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPic/Pods-InPic.release.xcconfig"; sourceTree = "<group>"; };
 		A209D05E1C64171A004D922D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A209D0611C641733004D922D /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
@@ -91,6 +97,8 @@
 		795010141C6414380095FD6F /* InPic */ = {
 			isa = PBXGroup;
 			children = (
+				79EF1E0B1C6958380021968F /* Utility */,
+				79EF1E0A1C6958300021968F /* Services */,
 				A209D06A1C6417B2004D922D /* View */,
 				A209D0691C641789004D922D /* Controller */,
 				A209D0601C641725004D922D /* Model */,
@@ -100,6 +108,22 @@
 				795010151C6414380095FD6F /* AppDelegate.swift */,
 			);
 			path = InPic;
+			sourceTree = "<group>";
+		};
+		79EF1E0A1C6958300021968F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				79EF1E061C693A3D0021968F /* DataService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		79EF1E0B1C6958380021968F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				79EF1E041C693A230021968F /* Constants.swift */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		870BB0402EC25B1BE6D0BAAA /* Pods */ = {
@@ -127,6 +151,7 @@
 		A209D0691C641789004D922D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				79EF1E081C6957E00021968F /* CreateAccountViewController.swift */,
 				795010171C6414380095FD6F /* LoginViewController.swift */,
 				A209D06D1C641886004D922D /* MainFeedViewController.swift */,
 				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
@@ -271,13 +296,16 @@
 				A209D0681C641744004D922D /* Like.swift in Sources */,
 				A209D0721C641FD3004D922D /* ProfileViewController.swift in Sources */,
 				A209D0761C642572004D922D /* Post.swift in Sources */,
+				79EF1E091C6957E00021968F /* CreateAccountViewController.swift in Sources */,
 				A209D0661C64173D004D922D /* Follower.swift in Sources */,
 				795010161C6414380095FD6F /* AppDelegate.swift in Sources */,
 				A209D06E1C641886004D922D /* MainFeedViewController.swift in Sources */,
 				A209D05F1C64171A004D922D /* User.swift in Sources */,
 				A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */,
+				79EF1E071C693A3D0021968F /* DataService.swift in Sources */,
 				A209D0621C641733004D922D /* Comment.swift in Sources */,
 				A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */,
+				79EF1E051C693A230021968F /* Constants.swift in Sources */,
 				A209D0641C641738004D922D /* Photo.swift in Sources */,
 				A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */,
 			);

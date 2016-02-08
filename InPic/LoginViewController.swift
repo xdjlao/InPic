@@ -11,16 +11,40 @@ import Firebase
 
 class LoginViewController: UIViewController {
 
+    //properties
+    @IBOutlet var emailText: UITextField!
+    @IBOutlet var passwordText: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    @IBAction func loginUser(sender: AnyObject) {
+        let email = emailText.text
+        let password = passwordText.text
+
+        if email != "" && password != "" {
+            DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) in
+                if error != nil {
+                    let alert = UIAlertController(title: "Sorry!", message: error.localizedDescription, preferredStyle: .Alert)
+                    let ok = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                    alert.addAction(ok)
+                    self.presentViewController(alert, animated: true, completion: nil)
+                } else {
+                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+                }
+            })
+        } else {
+            self.signupErrorAlert("Sorry!", message: "Don't forget to enter your email and password!")
+        }
     }
 
 
-    @IBAction func loginButtonPressed(sender: UIButton) {
-        
+    func signupErrorAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let ok = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alert.addAction(ok)
+        presentViewController(alert, animated: true, completion: nil)
     }
-
-
 }
 
