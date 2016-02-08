@@ -74,11 +74,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func wrapperDidPress(images: [UIImage]) {
-    
+        
     }
     
     func doneButtonDidPress(images: [UIImage]) {
-        
+        print(images)
     }
     
     func cancelButtonDidPress() {
