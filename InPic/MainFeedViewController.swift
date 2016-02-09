@@ -16,8 +16,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     let user = User(username: "")
     let image = Photo()
+    var returnedImage = UIImage()
 
     var firebaseRoot = Firebase()
+
+    let imagePickerController = ImagePickerController()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -62,23 +65,27 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("MainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
         // Configure the cell...
-        cell.cellImageView.image = image.img!
+        cell.cellImageView.image = self.returnedImage
         
         return cell
     }
     
     @IBAction func onUploadButtonPressed(sender: UIBarButtonItem) {
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
-        presentViewController(imagePickerController, animated: true, completion: nil)
+        self.imagePickerController.delegate = self
+        presentViewController(self.imagePickerController, animated: true, completion: nil)
     }
+
+    func doneButtonDidPress(images: [UIImage]) {
+        for image: UIImage in images {
+            self.returnedImage = image
+            self.tableView.reloadData()
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+
     
     func wrapperDidPress(images: [UIImage]) {
         
-    }
-    
-    func doneButtonDidPress(images: [UIImage]) {
-        print(images)
     }
     
     func cancelButtonDidPress() {
