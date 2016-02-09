@@ -33,7 +33,8 @@ class LoginViewController: UIViewController {
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     self.loggedInUser.setValue(email, forKey: "user")
-                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+//                    self.performSegueWithIdentifier("loginSegue", sender: nil)
+                    self.dismissViewControllerAnimated(true, completion: nil)
                 }
             })
         } else {
