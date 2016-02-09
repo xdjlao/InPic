@@ -28,6 +28,7 @@
 		A209D0761C642572004D922D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0751C642572004D922D /* Post.swift */; };
 		A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0791C643BFB004D922D /* CommentTableViewCell.swift */; };
 		A25CE1121C696C1A0032EB8B /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */; };
+		A25CE1141C6A4F9D0032EB8B /* CheckLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25CE1131C6A4F9D0032EB8B /* CheckLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		A209D0751C642572004D922D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A209D0791C643BFB004D922D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
+		A25CE1131C6A4F9D0032EB8B /* CheckLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckLoginViewController.swift; sourceTree = "<group>"; };
 		C7D15A5E35A94D56CAC9F622 /* Pods_InPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2835494506F3144AE25B4D0 /* Pods-InPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPic/Pods-InPic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +147,7 @@
 		A209D0691C641789004D922D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A25CE1131C6A4F9D0032EB8B /* CheckLoginViewController.swift */,
 				79EF1E081C6957E00021968F /* CreateAccountViewController.swift */,
 				795010171C6414380095FD6F /* LoginViewController.swift */,
 				A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */,
@@ -312,6 +315,7 @@
 				79EF1E051C693A230021968F /* Constants.swift in Sources */,
 				A209D0641C641738004D922D /* Photo.swift in Sources */,
 				A209D0701C641D05004D922D /* MainFeedTableViewCell.swift in Sources */,
+				A25CE1141C6A4F9D0032EB8B /* CheckLoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ub8-C9-FCz">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -65,7 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="150"/>
+            <point key="canvasLocation" x="1683" y="-40"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="LJA-Vq-bEz">
@@ -145,7 +145,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J7-h0-Bra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2729" y="165"/>
+            <point key="canvasLocation" x="2731" y="-40"/>
         </scene>
         <!--Detail Image View Controller-->
         <scene sceneID="7PT-Hg-Ce0">
@@ -359,7 +359,13 @@
                             <constraint firstAttribute="trailing" secondItem="dug-Fj-WMW" secondAttribute="trailing" id="qUt-YS-SIk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Me" id="6Ln-1w-DZ5"/>
+                    <navigationItem key="navigationItem" title="Me" id="6Ln-1w-DZ5">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="fxs-h2-zuv">
+                            <connections>
+                                <action selector="onLogOutTapped:" destination="roP-rG-Z4p" id="Ayo-MB-JSt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonImage" destination="MVn-cO-qri" id="3dn-LV-ojB"/>
                     </connections>
@@ -510,10 +516,10 @@
             </objects>
             <point key="canvasLocation" x="73" y="1649"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Check Login View Controller-->
         <scene sceneID="BTT-RD-7cA">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ub8-C9-FCz" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ub8-C9-FCz" customClass="CheckLoginViewController" customModule="InPic" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Dbu-eu-m1m">
                         <autoresizingMask key="autoresizingMask"/>
@@ -522,6 +528,7 @@
                     <connections>
                         <segue destination="da0-Zs-jzN" kind="relationship" relationship="viewControllers" id="RJw-oJ-4NV"/>
                         <segue destination="z3u-zW-dip" kind="relationship" relationship="viewControllers" id="PxR-IX-atP"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogInSegue" id="pGx-N0-Xqc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-bl-b2F" userLabel="First Responder" sceneMemberID="firstResponder"/>

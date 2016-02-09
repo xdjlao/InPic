@@ -33,6 +33,9 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+    @IBAction func onLogOutTapped(sender: UIBarButtonItem) {
+        
+    }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         dismissViewControllerAnimated(true, completion: nil)

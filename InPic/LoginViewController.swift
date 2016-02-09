@@ -19,12 +19,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        if let _ = self.loggedInUser.stringForKey("user") {
-            self.performSegueWithIdentifier("loginSegue", sender: nil)
-        }
-    }
 
     @IBAction func loginUser(sender: AnyObject) {
         let email = emailText.text
