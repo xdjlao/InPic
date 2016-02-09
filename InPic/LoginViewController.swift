@@ -14,9 +14,16 @@ class LoginViewController: UIViewController {
     //properties
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
+    let loggedInUser = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let _ = self.loggedInUser.stringForKey("user") {
+            self.performSegueWithIdentifier("loginSegue", sender: nil)
+        }
     }
 
     @IBAction func loginUser(sender: AnyObject) {
@@ -31,6 +38,7 @@ class LoginViewController: UIViewController {
                     alert.addAction(ok)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
+                    self.loggedInUser.setValue(email, forKey: "user")
                     self.performSegueWithIdentifier("loginSegue", sender: nil)
                 }
             })
