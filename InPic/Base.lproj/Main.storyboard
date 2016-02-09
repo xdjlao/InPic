@@ -60,7 +60,6 @@
                     <connections>
                         <outlet property="emailText" destination="ySO-Bq-kzE" id="UHk-Q8-0e7"/>
                         <outlet property="passwordText" destination="fF3-JM-r7z" id="osF-lO-NJm"/>
-                        <segue destination="Ub8-C9-FCz" kind="show" identifier="loginSegue" id="p2t-IA-AVP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -140,7 +139,6 @@
                         <outlet property="emailText" destination="x01-bY-qmK" id="feG-aA-IX6"/>
                         <outlet property="passwordText" destination="6mH-pB-RaT" id="lgq-2n-HPu"/>
                         <outlet property="usernameText" destination="h2L-Uj-cfN" id="nX5-cf-EVh"/>
-                        <segue destination="Ub8-C9-FCz" kind="show" identifier="createAccSegue" id="aNL-Sf-3sY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J7-h0-Bra" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -536,7 +534,4 @@
             <point key="canvasLocation" x="1704" y="857"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="p2t-IA-AVP"/>
-    </inferredMetricsTieBreakers>
 </document>
