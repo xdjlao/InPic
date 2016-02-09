@@ -69,7 +69,7 @@ class DetailImageViewController: UIViewController, UITableViewDataSource, UITabl
         let tableHeight = self.tableView.frame.size.height
         self.detailImageView.frame = CGRectMake(0, 0, self.view.frame.size.width, imageHeight - dragPosition)
         self.tableView.frame = CGRectMake(0, self.detailImageView.frame.size.height, self.view.frame.size.width, tableHeight + dragPosition)
-        print(self.tableView.contentOffset.y)
+//        print(self.tableView.contentOffset.y)
     }
 
     /*

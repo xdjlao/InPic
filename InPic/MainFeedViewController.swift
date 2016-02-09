@@ -13,14 +13,13 @@ import ImagePicker
 class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ImagePickerDelegate {
     
     var postArray = [Post]()
+    let imagePickerController = ImagePickerController()
     
     let user = User(username: "")
     let image = Photo()
     var returnedImage = UIImage()
 
     var firebaseRoot = Firebase()
-
-    let imagePickerController = ImagePickerController()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -72,22 +71,23 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     @IBAction func onUploadButtonPressed(sender: UIBarButtonItem) {
         self.imagePickerController.delegate = self
+        self.imagePickerController.imageLimit = 1
         presentViewController(self.imagePickerController, animated: true, completion: nil)
-    }
-
-    func doneButtonDidPress(images: [UIImage]) {
-        for image: UIImage in images {
-            self.returnedImage = image
-            self.tableView.reloadData()
-        }
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     
     func wrapperDidPress(images: [UIImage]) {
         
     }
-    
+
+    func doneButtonDidPress(images: [UIImage]) {
+        self.imagePickerController.dismissViewControllerAnimated(true) { () -> Void in
+            if images.count > 0 {
+                self.performSegueWithIdentifier("postImageSegue", sender: images[0])
+            }
+        }
+    }
+
     func cancelButtonDidPress() {
     
     }
@@ -160,6 +160,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             let destination = segue.destinationViewController as! DetailImageViewController
             let indexPath = self.tableView.indexPathForCell(sender as! MainFeedTableViewCell)
             destination.post = self.postArray[(indexPath?.section)!]
+        } else if segue.identifier == "postImageSegue" {
+            let destination = segue.destinationViewController as! PostImageViewController
+            destination.postImage = sender as? UIImage
         } else {
             //
         }
