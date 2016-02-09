@@ -25,5 +25,10 @@ class CheckLoginViewController: UITabBarController {
             self.performSegueWithIdentifier("goLogInSegue", sender: nil)
         }
     }
+    
+    @IBAction func unwindtoLogin(sender: UIStoryboardSegue) {
+        let sourceViewController = sender.sourceViewController
+        // Pull any data from the view controller which initiated the unwind segue.
+    }
 
 }
