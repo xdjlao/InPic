@@ -10,9 +10,9 @@ import UIKit
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet weak var profileImage: UIImageView!
-    
     let imagePicker = UIImagePickerController()
+    
+    @IBOutlet weak var buttonImage: UIButton!
     
     override func viewDidLoad() {
         
@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.delegate = self
         
         // Do any additional setup after loading the view, typically from a nib.
-    }
+        self.buttonImage.setImage(UIImage(named: "image"), forState: UIControlState.Normal)    }
     
     
     @IBAction func editProfilePicTapped(sender: AnyObject) {
@@ -30,11 +30,6 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
         imagePicker.sourceType = .PhotoLibrary
         
         presentViewController(imagePicker, animated: true, completion: nil)
-        
-        
-        
-        
-        
         
     }
     
@@ -45,8 +40,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            profileImage.contentMode = .ScaleAspectFit
-            profileImage.image = pickedImage
+            self.buttonImage.imageView!.contentMode = .ScaleAspectFit
+            self.buttonImage.setImage(pickedImage, forState: UIControlState.Normal)
         }
         
         dismissViewControllerAnimated(true, completion: nil)

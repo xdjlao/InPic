@@ -13,6 +13,7 @@ import ImagePicker
 class MainFeedViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ImagePickerDelegate {
     
     var postArray = [Post]()
+    let imagePickerController = ImagePickerController()
     
     let user = User(username: "")
     let image = Photo()
@@ -68,8 +69,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     @IBAction func onUploadButtonPressed(sender: UIBarButtonItem) {
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self
+        self.imagePickerController.delegate = self
         presentViewController(imagePickerController, animated: true, completion: nil)
     }
     
@@ -78,7 +78,11 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func doneButtonDidPress(images: [UIImage]) {
-        print(images)
+        self.imagePickerController.dismissViewControllerAnimated(true) { () -> Void in
+            if images.count > 0 {
+                self.performSegueWithIdentifier("postImageSegue", sender: images[0])
+            }
+        }
     }
     
     func cancelButtonDidPress() {
@@ -153,6 +157,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             let destination = segue.destinationViewController as! DetailImageViewController
             let indexPath = self.tableView.indexPathForCell(sender as! MainFeedTableViewCell)
             destination.post = self.postArray[(indexPath?.section)!]
+        } else if segue.identifier == "postImageSegue" {
+            let destination = segue.destinationViewController as! PostImageViewController
+            destination.postImage = sender as? UIImage
         } else {
             //
         }
