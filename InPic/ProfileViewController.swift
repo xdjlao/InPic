@@ -37,11 +37,6 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, UINavigation
         
     }
     
-    @IBAction func onLogOutTapped(sender: UIBarButtonItem) {
-        let appDomain = NSBundle.mainBundle().bundleIdentifier
-        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
-    }
-    
     func wrapperDidPress(images: [UIImage]) {
         
     }
@@ -71,5 +66,12 @@ class ProfileViewController: UIViewController, ImagePickerDelegate, UINavigation
     //        dismissViewControllerAnimated(true, completion: nil)
     //        
     //    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "logoutSegue" {
+            let appDomain = NSBundle.mainBundle().bundleIdentifier
+            NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
+        }
+    }
     
 }

@@ -11,10 +11,16 @@ import UIKit
 class MainFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellImageView: UIImageView!
+    @IBOutlet weak var buttonLabel: UIButton!
+    @IBOutlet weak var likesLabel: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        self.buttonLabel.contentHorizontalAlignment = .Left
+        self.likesLabel.contentHorizontalAlignment = .Left
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -22,5 +28,5 @@ class MainFeedTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

@@ -27,6 +27,7 @@
 		A209D0741C642013004D922D /* DetailImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0731C642013004D922D /* DetailImageViewController.swift */; };
 		A209D0761C642572004D922D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0751C642572004D922D /* Post.swift */; };
 		A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A209D0791C643BFB004D922D /* CommentTableViewCell.swift */; };
+		A24D16BD1C6B24F400EC2F90 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A24D16BC1C6B24F400EC2F90 /* CommentsViewController.swift */; };
 		A25CE1121C696C1A0032EB8B /* PostImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		A209D0731C642013004D922D /* DetailImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailImageViewController.swift; sourceTree = "<group>"; };
 		A209D0751C642572004D922D /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A209D0791C643BFB004D922D /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
+		A24D16BC1C6B24F400EC2F90 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostImageViewController.swift; sourceTree = "<group>"; };
 		C7D15A5E35A94D56CAC9F622 /* Pods_InPic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InPic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2835494506F3144AE25B4D0 /* Pods-InPic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InPic.release.xcconfig"; path = "Pods/Target Support Files/Pods-InPic/Pods-InPic.release.xcconfig"; sourceTree = "<group>"; };
@@ -147,12 +149,11 @@
 			children = (
 				79EF1E081C6957E00021968F /* CreateAccountViewController.swift */,
 				795010171C6414380095FD6F /* LoginViewController.swift */,
-				A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */,
 				A209D06D1C641886004D922D /* MainFeedViewController.swift */,
-				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
+				A24D16BC1C6B24F400EC2F90 /* CommentsViewController.swift */,
+				A25CE1111C696C1A0032EB8B /* PostImageViewController.swift */,
 				A209D0711C641FD3004D922D /* ProfileViewController.swift */,
 				A209D0731C642013004D922D /* DetailImageViewController.swift */,
-				A209D0791C643BFB004D922D /* CommentTableViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -161,6 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				795010191C6414380095FD6F /* Main.storyboard */,
+				A209D06F1C641D05004D922D /* MainFeedTableViewCell.swift */,
+				A209D0791C643BFB004D922D /* CommentTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				79EF1E091C6957E00021968F /* CreateAccountViewController.swift in Sources */,
 				A209D0661C64173D004D922D /* Follower.swift in Sources */,
 				795010161C6414380095FD6F /* AppDelegate.swift in Sources */,
+				A24D16BD1C6B24F400EC2F90 /* CommentsViewController.swift in Sources */,
 				A209D06E1C641886004D922D /* MainFeedViewController.swift in Sources */,
 				A209D05F1C64171A004D922D /* User.swift in Sources */,
 				A209D07A1C643BFB004D922D /* CommentTableViewCell.swift in Sources */,
