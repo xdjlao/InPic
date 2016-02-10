@@ -33,7 +33,6 @@ class LoginViewController: UIViewController {
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
                     self.loggedInUser.setValue(email, forKey: "user")
-//                    self.performSegueWithIdentifier("loginSegue", sender: nil)
                     self.dismissViewControllerAnimated(true, completion: nil)
                 }
             })
@@ -41,7 +40,6 @@ class LoginViewController: UIViewController {
             self.signupErrorAlert("Sorry!", message: "Don't forget to enter your email and password!")
         }
     }
-
 
     func signupErrorAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)

@@ -13,6 +13,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet var usernameText: UITextField!
     @IBOutlet var emailText: UITextField!
     @IBOutlet var passwordText: UITextField!
+    let loggedInUser = NSUserDefaults.standardUserDefaults()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +42,8 @@ class CreateAccountViewController: UIViewController {
                         let user = ["provider": authData.provider!, "email": email!, "username": username!]
                         DataService.dataService.createNewAccount(authData.uid, user: user)
                     })
-                    self.performSegueWithIdentifier("createAccSegue", sender: nil)
+                    self.loggedInUser.setValue(email, forKey: "user")
+                    self.performSegueWithIdentifier("unwindToMain", sender: nil)
                 }
             })
         } else {
