@@ -171,7 +171,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OGT-mi-klG" id="11i-az-rJ5">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="n7A-kF-TWf">
@@ -234,6 +234,7 @@
                             <constraint firstAttribute="trailing" secondItem="8u2-tu-ik8" secondAttribute="trailing" id="cCT-Hu-2mB"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dmG-b8-qRo"/>
                     <connections>
                         <outlet property="detailImageView" destination="8u2-tu-ik8" id="y1U-Yp-bnU"/>
                         <outlet property="tableView" destination="OLV-vK-9Gi" id="bOB-3d-ymf"/>
@@ -263,7 +264,7 @@
                                         <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="We1-0a-Zuw" id="ues-s2-D8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -361,6 +362,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Log out" id="fxs-h2-zuv">
                             <connections>
                                 <action selector="onLogOutTapped:" destination="roP-rG-Z4p" id="Ayo-MB-JSt"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" id="axm-QA-eSp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -398,9 +400,11 @@
                     </view>
                     <connections>
                         <outlet property="bgImageView" destination="5Gt-pF-Ety" id="FuK-ql-VwS"/>
+                        <segue destination="5sL-ZC-exi" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainFeed:" id="cz5-zI-Av0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMQ-8l-9cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5sL-ZC-exi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4338" y="927"/>
         </scene>
@@ -416,26 +420,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QGo-Tz-3NL">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="247" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QGo-Tz-3NL">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainFeedCell" id="VsP-q9-VaM" customClass="MainFeedTableViewCell" customModule="InPic" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainFeedCell" rowHeight="247" id="VsP-q9-VaM" customClass="MainFeedTableViewCell" customModule="InPic" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="247"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VsP-q9-VaM" id="mtP-mL-jGl">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="247"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-rQ-nn1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zkv-rQ-nn1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="247"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Zkv-rQ-nn1" firstAttribute="leading" secondItem="mtP-mL-jGl" secondAttribute="leading" id="2BE-W1-e8E"/>
                                                 <constraint firstItem="Zkv-rQ-nn1" firstAttribute="top" secondItem="mtP-mL-jGl" secondAttribute="top" id="BdU-IN-i7g"/>
                                                 <constraint firstAttribute="bottom" secondItem="Zkv-rQ-nn1" secondAttribute="bottom" id="Z4J-IO-wNg"/>
-                                                <constraint firstAttribute="trailing" secondItem="Zkv-rQ-nn1" secondAttribute="trailing" id="yLs-0Z-mSR"/>
+                                                <constraint firstAttribute="trailing" secondItem="Zkv-rQ-nn1" secondAttribute="trailing" constant="-33" id="yLs-0Z-mSR"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -470,6 +474,7 @@
                     <connections>
                         <outlet property="tableView" destination="QGo-Tz-3NL" id="QqC-2O-eyG"/>
                         <segue destination="9f5-SX-nUT" kind="show" identifier="postImageSegue" id="xMe-UY-Llb"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogInSegue" id="whH-UH-Fb4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SFn-4R-lgv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -488,7 +493,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="f3Z-l9-bwy" kind="relationship" relationship="rootViewController" id="38L-DS-LlW"/>
+                        <segue destination="f3Z-l9-bwy" kind="relationship" relationship="rootViewController" id="eJZ-gP-e6K"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbm-iJ-VS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -514,10 +519,11 @@
             </objects>
             <point key="canvasLocation" x="73" y="1649"/>
         </scene>
-        <!--Check Login View Controller-->
+        <!--Tab Bar Controller-->
         <scene sceneID="BTT-RD-7cA">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ub8-C9-FCz" customClass="CheckLoginViewController" customModule="InPic" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-bl-b2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Ub8-C9-FCz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Dbu-eu-m1m">
                         <autoresizingMask key="autoresizingMask"/>
@@ -526,12 +532,13 @@
                     <connections>
                         <segue destination="da0-Zs-jzN" kind="relationship" relationship="viewControllers" id="RJw-oJ-4NV"/>
                         <segue destination="z3u-zW-dip" kind="relationship" relationship="viewControllers" id="PxR-IX-atP"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goLogInSegue" id="pGx-N0-Xqc"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eAw-bl-b2F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1704" y="857"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="axm-QA-eSp"/>
+    </inferredMetricsTieBreakers>
 </document>

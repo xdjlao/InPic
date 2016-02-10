@@ -24,10 +24,10 @@ class DetailImageViewController: UIViewController, UITableViewDataSource, UITabl
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = self.tableView.frame.height/5
         self.tableView.separatorColor = UIColor.clearColor()
-        image.img = UIImage(named: "image")
-        
-        detailImageView.image = image.img
-        
+//        image.img = UIImage(named: "image")
+
+        detailImageView.image = post?.image
+
         for i in 1...20 {
             let comment = Comment()
             comment.text = "Comment \(i)"

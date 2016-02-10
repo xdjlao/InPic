@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-class Photo {
-//    var url:NSURL?
-    var img:UIImage?
+class Photo: UIImage {
+    
 }

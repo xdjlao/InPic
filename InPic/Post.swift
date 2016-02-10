@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 class Post: NSObject {
     var caption:String?
-    var timestamp:NSDate?
+    var timestamp:String?
+    var image: UIImage?
 }

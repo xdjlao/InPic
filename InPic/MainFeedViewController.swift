@@ -18,29 +18,72 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     let user = User(username: "")
     let image = Photo()
     var returnedImage = UIImage()
+    var returnedString = ""
 
-    var firebaseRoot = Firebase()
+    var didLoadImages: Bool!
+
+    let loggedInUser = NSUserDefaults.standardUserDefaults()
     
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        firebaseRoot = Firebase(url: "https://inpic.firebaseio.com/data")
+        DataService.dataService.BASE_REF.keepSynced(true)
         self.tableView.rowHeight = self.view.frame.height / 3
         user.username = "jerlao"
-        image.img = UIImage(named: "image")
-        
-        for i in 1...10 {
-            let post = Post()
-            post.caption = "Test post \(i)"
-            postArray.append(post)
-        }
+//        image.img = UIImage(named: "image")
+        self.didLoadImages = false
+
+        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+        dispatch_async(dispatch_get_global_queue(priority, 0)) {
+            DataService.dataService.PHOTO_REF.observeEventType(.ChildAdded, withBlock: { (data) in
+                print(data.value.objectForKey("uid"))
+                let imageData = NSData(base64EncodedString: data.value.objectForKey("string") as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                let backImage = UIImage(data: imageData!)
+                let post = Post()
+                post.image = backImage!
+                if let time = data.value.objectForKey("timestamp") {
+                    post.timestamp = String(time)
+                }
+                print(post.timestamp!)
+                post.caption = "Test"
+                self.postArray.append(post)
+                self.didLoadImages = true
+                print(self.returnedImage)
+                self.returnedString = "Yo"
+                dispatch_async(dispatch_get_main_queue()){
+                    self.sortByTimestamp()
+                    self.tableView.reloadData()
+                    print("Reloaded table view")
+                    print(self.postArray.count)
+                }
+                }, withCancelBlock: { (error) in
+            })
+    }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+
+    func sortByTimestamp()
+    {
+        self.postArray.sortInPlace({$0.timestamp > $1.timestamp})
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        if let _ = self.loggedInUser.stringForKey("user") {
+
+        } else {
+            self.performSegueWithIdentifier("goLogInSegue", sender: nil)
+        }
+        self.tableView.reloadData()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        self.tabBarController?.tabBar.hidden = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +95,8 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return postArray.count
+
+        return self.postArray.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -64,8 +108,15 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("MainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
         // Configure the cell...
-        cell.cellImageView.image = self.returnedImage
-        
+        if (didLoadImages == true)
+        {
+
+            cell.cellImageView.image = self.postArray[indexPath.section].image
+        } else {
+
+        }
+//      cell.textLabel?.text = returnedImage
+
         return cell
     }
     
@@ -84,12 +135,17 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         self.imagePickerController.dismissViewControllerAnimated(true) { () -> Void in
             if images.count > 0 {
                 self.performSegueWithIdentifier("postImageSegue", sender: images[0])
+                
             }
         }
     }
 
+    @IBAction func unwindToMainFeed(sender: UIStoryboardSegue) {
+
+    }
+
     func cancelButtonDidPress() {
-    
+        
     }
 
     /*
@@ -159,7 +215,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         if segue.identifier == "detailSegue" {
             let destination = segue.destinationViewController as! DetailImageViewController
             let indexPath = self.tableView.indexPathForCell(sender as! MainFeedTableViewCell)
-            destination.post = self.postArray[(indexPath?.section)!]
+            destination.post = self.postArray[(indexPath?.section)!] as! Post
         } else if segue.identifier == "postImageSegue" {
             let destination = segue.destinationViewController as! PostImageViewController
             destination.postImage = sender as? UIImage
