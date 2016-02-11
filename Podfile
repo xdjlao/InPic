@@ -7,6 +7,7 @@ target 'InPic' do
 
 pod 'Firebase', '>= 2.5.0'
 pod 'ImagePicker'
+pod 'Toucan'
 
 end
 

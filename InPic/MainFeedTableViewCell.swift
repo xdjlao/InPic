@@ -12,14 +12,12 @@ class MainFeedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var buttonLabel: UIButton!
-    @IBOutlet weak var likesLabel: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         self.buttonLabel.contentHorizontalAlignment = .Left
-        self.likesLabel.contentHorizontalAlignment = .Left
         
     }
 

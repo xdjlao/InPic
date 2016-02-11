@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toucan
 
 class PostImageViewController: UIViewController {
     
@@ -25,6 +26,9 @@ class PostImageViewController: UIViewController {
         self.bgImageView.image = postImage
         let doneButton = UIBarButtonItem(title: "Done", style: .Plain, target: self, action: "doneButtonPressed")
         self.navigationItem.rightBarButtonItem = doneButton
+        
+        let leftPaddingView = UIView(frame: CGRectMake(0,0,10,self.captionTextField.frame.height))
+        self.captionTextField.leftView = leftPaddingView
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,7 +39,8 @@ class PostImageViewController: UIViewController {
     func doneButtonPressed()
     {
         dispatch_async(dispatch_get_global_queue(Int(QOS_CLASS_USER_INITIATED.rawValue), 0)) {
-            let imageData: NSData = UIImageJPEGRepresentation(self.postImage!, 1.0)!
+            let croppedImage = self.getCroppedImage(self.postImage!)
+            let imageData: NSData = UIImageJPEGRepresentation(croppedImage, 1.0)!
             self.base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
             let timestamp = NSDate(timeIntervalSinceNow: NSTimeInterval())
             //DataService.dataService.createNewPhoto(self.base64String as String, uid: DataService.dataService.BASE_REF.authData.uid as String, timestamp: "\(timestamp)")
@@ -44,6 +49,10 @@ class PostImageViewController: UIViewController {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    func getCroppedImage(image: UIImage) -> UIImage {
+        let resizedImage = Toucan(image: image).resize(CGSize(width: 1080, height: 1080), fitMode: Toucan.Resize.FitMode.Crop).image
+        return resizedImage
+    }
 
     /*
     // MARK: - Navigation

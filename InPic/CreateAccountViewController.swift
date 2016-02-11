@@ -38,12 +38,22 @@ class CreateAccountViewController: UIViewController {
                     alert.addAction(ok)
                     self.presentViewController(alert, animated: true, completion: nil)
                 } else {
-                    DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { (error, authData) in
-                        let user = ["provider": authData.provider!, "email": email!, "username": username!]
-                        DataService.dataService.createNewAccount(authData.uid, user: user)
+                    let userID = result["uid"] as? String
+                    DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { (newError, authData) in
+
+                        if error != nil {
+                            let newAlert = UIAlertController(title: "Sorry!", message: newError.localizedDescription, preferredStyle: .Alert)
+                            let newOk = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                            newAlert.addAction(newOk)
+                            self.presentViewController(newAlert, animated: true, completion: nil)
+                        } else {
+                            DataService.dataService.createNewAccount(userID!, username: username!, email: email!)
+                            self.loggedInUser.setValue(userID, forKey: "uid")
+                            self.performSegueWithIdentifier("createToMain", sender: nil)
+                        }
                     })
-                    self.loggedInUser.setValue(email, forKey: "user")
-                    self.performSegueWithIdentifier("unwindToMain", sender: nil)
+//
+                    
                 }
             })
         } else {

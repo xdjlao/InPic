@@ -133,6 +133,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="buttonImage" destination="MVn-cO-qri" id="3dn-LV-ojB"/>
+                        <outlet property="topStackView" destination="wQL-Lv-sYB" id="GoN-oh-OIH"/>
                         <segue destination="TMD-ar-dws" kind="unwind" identifier="unwindToMain" unwindAction="unwindtoLogin:" id="q9F-Mt-Cn6"/>
                     </connections>
                 </viewController>

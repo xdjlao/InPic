@@ -86,8 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-InPic/Firebase.framework"
   install_framework "Pods-InPic/ImagePicker.framework"
+  install_framework "Pods-InPic/Toucan.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-InPic/Firebase.framework"
   install_framework "Pods-InPic/ImagePicker.framework"
+  install_framework "Pods-InPic/Toucan.framework"
 fi

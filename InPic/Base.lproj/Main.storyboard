@@ -139,7 +139,7 @@
                         <outlet property="emailText" destination="x01-bY-qmK" id="feG-aA-IX6"/>
                         <outlet property="passwordText" destination="6mH-pB-RaT" id="lgq-2n-HPu"/>
                         <outlet property="usernameText" destination="h2L-Uj-cfN" id="nX5-cf-EVh"/>
-                        <segue destination="0iP-Ki-jm8" kind="unwind" identifier="unwindToMain" unwindAction="unwindtoLogin:" id="uMf-kv-uqi"/>
+                        <segue destination="0iP-Ki-jm8" kind="unwind" identifier="createToMain" unwindAction="unwindToMain:" id="HxC-pv-y9h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1J7-h0-Bra" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,8 +162,9 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Gt-pF-Ety">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-rC-xMX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-rC-xMX">
                                 <rect key="frame" x="20" y="84" width="560" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.32746010638297873" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="19R-4E-Nep"/>
                                 </constraints>
@@ -185,7 +186,7 @@
                     <connections>
                         <outlet property="bgImageView" destination="5Gt-pF-Ety" id="FuK-ql-VwS"/>
                         <outlet property="captionTextField" destination="cbM-rC-xMX" id="Lap-2X-wMY"/>
-                        <segue destination="5sL-ZC-exi" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainFeed:" id="cz5-zI-Av0"/>
+                        <segue destination="5sL-ZC-exi" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMain:" id="cz5-zI-Av0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMQ-8l-9cI" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -276,7 +277,7 @@
                                                     <rect key="frame" x="0.0" y="300" width="600" height="63"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysg-U9-oye">
-                                                            <rect key="frame" x="8" y="33" width="584" height="15"/>
+                                                            <rect key="frame" x="8" y="31" width="584" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="15" id="DWX-qf-AlX"/>
                                                             </constraints>
@@ -288,29 +289,22 @@
                                                                 <segue destination="dVD-7W-Pqy" kind="show" identifier="commentSegue" id="Mks-By-Yf3"/>
                                                             </connections>
                                                         </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ExX-li-MtZ">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="52 Likes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eni-Yb-dm3">
                                                             <rect key="frame" x="8" y="8" width="584" height="15"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="15" id="PT5-Q1-fWl"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <state key="normal" title="23 Likes">
-                                                                <color key="titleColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                                            </state>
-                                                            <connections>
-                                                                <segue destination="dVD-7W-Pqy" kind="show" identifier="likeSegue" id="y17-Uf-b8F"/>
-                                                            </connections>
-                                                        </button>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="trailing" secondItem="ysg-U9-oye" secondAttribute="trailing" constant="8" id="8wK-cO-fxP"/>
-                                                        <constraint firstItem="ExX-li-MtZ" firstAttribute="leading" secondItem="7XP-k0-jAM" secondAttribute="leading" constant="8" id="Niz-OP-WQr"/>
-                                                        <constraint firstAttribute="trailing" secondItem="ExX-li-MtZ" secondAttribute="trailing" constant="8" id="OeJ-pX-FhA"/>
+                                                        <constraint firstItem="eni-Yb-dm3" firstAttribute="leading" secondItem="7XP-k0-jAM" secondAttribute="leading" constant="8" id="R8f-pH-Yx9"/>
                                                         <constraint firstItem="ysg-U9-oye" firstAttribute="leading" secondItem="7XP-k0-jAM" secondAttribute="leading" constant="8" id="WFc-rK-Svu"/>
-                                                        <constraint firstItem="ExX-li-MtZ" firstAttribute="top" secondItem="7XP-k0-jAM" secondAttribute="top" constant="8" id="ZdJ-qF-3yb"/>
                                                         <constraint firstAttribute="height" constant="50" id="dV1-eQ-cET"/>
-                                                        <constraint firstItem="ysg-U9-oye" firstAttribute="top" secondItem="ExX-li-MtZ" secondAttribute="bottom" constant="10" id="zBN-Ig-84R"/>
+                                                        <constraint firstItem="eni-Yb-dm3" firstAttribute="top" secondItem="7XP-k0-jAM" secondAttribute="top" constant="8" id="kiN-6Q-mqu"/>
+                                                        <constraint firstItem="ysg-U9-oye" firstAttribute="top" secondItem="eni-Yb-dm3" secondAttribute="bottom" constant="8" id="n2S-Yc-rSM"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eni-Yb-dm3" secondAttribute="trailing" constant="8" id="ygg-ZD-jE3"/>
                                                     </constraints>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -340,7 +334,6 @@
                                         <connections>
                                             <outlet property="buttonLabel" destination="ysg-U9-oye" id="o7i-SG-aP1"/>
                                             <outlet property="cellImageView" destination="Zkv-rQ-nn1" id="1EF-UF-o7p"/>
-                                            <outlet property="likesLabel" destination="ExX-li-MtZ" id="hXD-gc-VMn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -410,7 +403,4 @@
             <point key="canvasLocation" x="1044" y="725"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="y17-Uf-b8F"/>
-    </inferredMetricsTieBreakers>
 </document>

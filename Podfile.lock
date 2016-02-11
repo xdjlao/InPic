@@ -1,15 +1,18 @@
 PODS:
   - Firebase (2.5.0)
   - ImagePicker (1.1)
+  - Toucan (0.5.0)
 
 DEPENDENCIES:
   - Firebase (>= 2.5.0)
   - ImagePicker
+  - Toucan
 
 SPEC CHECKSUMS:
   Firebase: 744617c0733b45198f9486ebd5cac64ec2d10d79
   ImagePicker: 2a904341bbc47c96457de00558d2f8dd186eff7c
+  Toucan: 0519c341148252ae114c5a657d2a85bb9ada9e40
 
-PODFILE CHECKSUM: 5e9f7a5b1d7a89a124cd0d01e43100937bdaf9a9
+PODFILE CHECKSUM: 7fae6856f74d0ef03a49669fce1699f8f060a5b1
 
 COCOAPODS: 1.0.0.beta.3

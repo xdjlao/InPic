@@ -34,20 +34,21 @@ class DataService {
     }
 
     var CURRENT_USER_REF: Firebase {
-        let userID = NSUserDefaults.standardUserDefaults().valueForKey("uid") as! String
-
+        let userID = (NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String)!
         let currentUser = Firebase(url: "\(BASE_REF)").childByAppendingPath("users").childByAppendingPath(userID)
 
         return currentUser!
     }
 
-    func createNewAccount(uid: String, user: Dictionary<String, String>) {
+    func createNewAccount(uid: String, username: String, email: String) {
+        let user = ["username":username, "email":email]
         USER_REF.childByAppendingPath(uid).setValue(user)
     }
     
     func createNewPost(caption: String, timestamp: String, photo: String) {
         let posts = ["caption":caption, "timestamp":timestamp]
-        POST_REF.childByAutoId().setValue(posts, withCompletionBlock: {
+        let userID = (NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String)!
+        POST_REF.childByAppendingPath(userID).childByAutoId().setValue(posts, withCompletionBlock: {
             (error:NSError?, ref:Firebase!) in
             if (error != nil) {
                 print("Data could not be saved.")
@@ -60,5 +61,11 @@ class DataService {
     func createNewPhoto(photo: String, postid: String) {
         let photos = ["string": photo]
         PHOTO_REF.childByAppendingPath(postid).childByAutoId().setValue(photos)
+    }
+    
+    func updateProfileImage(photo: String) {
+        let avatar = ["avatar": photo]
+        let userID = (NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String)!
+        USER_REF.childByAppendingPath(userID).updateChildValues(avatar)
     }
 }

@@ -7,15 +7,19 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
     var uid: String
     var username: String
-
+    var avatar: UIImage = UIImage(named: "image")!
+    var post: [Post]
+    
     init(uid: String, username: String)
     {
         self.uid = uid
         self.username = username
+        self.post = []
         
     }
 }
