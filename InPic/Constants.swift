@@ -8,4 +8,4 @@
 
 import Foundation
 
-let BASE_URL = "https://inpic.firebaseio.com"
+let BASE_URL = "https://inpic-dev.firebaseio.com/"

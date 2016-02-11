@@ -12,8 +12,9 @@ class PostImageViewController: UIViewController {
     
     var postImage: UIImage?
 
-    var base64String: NSString!
+    var base64String: String?
 
+    @IBOutlet weak var captionTextField: UITextField!
     @IBOutlet weak var bgImageView: UIImageView!
     
     override func viewDidLoad() {
@@ -37,7 +38,8 @@ class PostImageViewController: UIViewController {
             let imageData: NSData = UIImageJPEGRepresentation(self.postImage!, 1.0)!
             self.base64String = imageData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
             let timestamp = NSDate(timeIntervalSinceNow: NSTimeInterval())
-            DataService.dataService.createNewPhoto(self.base64String as String, uid: DataService.dataService.BASE_REF.authData.uid as String, timestamp: "\(timestamp)")
+            //DataService.dataService.createNewPhoto(self.base64String as String, uid: DataService.dataService.BASE_REF.authData.uid as String, timestamp: "\(timestamp)")
+            DataService.dataService.createNewPost(self.captionTextField.text!, timestamp: "\(timestamp)", photo: self.base64String!)
         }
         self.navigationController?.popViewControllerAnimated(true)
     }

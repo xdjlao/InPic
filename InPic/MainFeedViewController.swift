@@ -17,9 +17,9 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var user:User?
     let image = Photo()
     var returnedImage = UIImage()
-    var returnedString = ""
+    //    var returnedString = ""
     
-    var didLoadImages: Bool!
+    //    var didLoadImages: Bool!
     
     let loggedInUser = NSUserDefaults.standardUserDefaults()
     
@@ -30,35 +30,56 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         DataService.dataService.BASE_REF.keepSynced(true)
         self.tableView.rowHeight = 360
         
-        self.didLoadImages = false
+        //        self.didLoadImages = false
         
         let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
         dispatch_async(dispatch_get_global_queue(priority, 0)) {
-            DataService.dataService.PHOTO_REF.observeEventType(.ChildAdded, withBlock: { (data) in
-                let imageData = NSData(base64EncodedString: data.value.objectForKey("string") as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-                let backImage = UIImage(data: imageData!)
-                let post = Post()
-                post.image = backImage!
-                if let time = data.value.objectForKey("timestamp") {
-                    post.timestamp = String(time)
-                }
-                // print(post.timestamp!)
-                post.caption = "Test"
-                self.postArray.append(post)
-                self.didLoadImages = true
+            DataService.dataService.POST_REF.queryOrderedByChild("timestamp").observeEventType(.ChildAdded, withBlock: { (data) in
+                
+                let ref = DataService.dataService.PHOTO_REF.childByAppendingPath(data.key)
+                
+                ref.observeEventType(.Value, withBlock: { snapshot in
+                    if let snaps = snapshot.children.allObjects as? [FDataSnapshot] {
+                        if snaps.count > 0 {
+                            let snap = snaps[0]
+                            if let imageString = snap.value["string"] as? String {
+                                let imageData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                                let backImage = UIImage(data: imageData!)
+                                let post = Post()
+                                // post.image = backImage!
+                                if let time = data.value.objectForKey("timestamp") {
+                                    post.timestamp = String(time)
+                                }
+                                // print(post.timestamp!)
+                                post.caption = "Test"
+                                
+                                let photo = Photo()
+                                photo.image = backImage
+                                post.photo = photo
+                                
+                                self.postArray.append(post)
+                                self.sortByTimestamp()
+                                dispatch_async(dispatch_get_main_queue()){
+                                    self.tableView.reloadData()
+                                    // print("Reloaded table view")
+                                    // print(self.postArray.count)
+                                }
+                            }
+                        }
+                    }
+                    
+                    }, withCancelBlock: { error in
+                        print(error)
+                })
+                
+                //                self.didLoadImages = true
                 // print(self.returnedImage)
-                self.returnedString = "Yo"
+                //                self.returnedString = "Yo"
                 
-                let uid = data.value.objectForKey("uid") as! String
-                //let username = data.value.objectForKey("uid")
-                self.user = User(uid: uid, username: "Jerry")
+                //                let uid = data.value.objectForKey("uid") as! String
+                //                //let username = data.value.objectForKey("uid")
+                //                self.user = User(uid: uid, username: "Jerry")
                 
-                dispatch_async(dispatch_get_main_queue()){
-                    self.sortByTimestamp()
-                    self.tableView.reloadData()
-                    // print("Reloaded table view")
-                    // print(self.postArray.count)
-                }
                 }, withCancelBlock: { (error) in
             })
         }
@@ -109,13 +130,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCellWithIdentifier("MainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
         // Configure the cell...
-        if (didLoadImages == true)
-        {
-            
-            cell.cellImageView.image = self.postArray[indexPath.section].image
-        } else {
-            
-        }
+        cell.cellImageView.image = self.postArray[indexPath.section].photo?.image
         
         return cell
     }

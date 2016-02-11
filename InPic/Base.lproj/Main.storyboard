@@ -162,17 +162,29 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Gt-pF-Ety">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-rC-xMX">
+                                <rect key="frame" x="20" y="84" width="560" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="19R-4E-Nep"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5Gt-pF-Ety" firstAttribute="leading" secondItem="obR-0h-FFr" secondAttribute="leading" id="0h5-QH-TPp"/>
+                            <constraint firstItem="cbM-rC-xMX" firstAttribute="trailing" secondItem="obR-0h-FFr" secondAttribute="trailingMargin" id="7e2-FP-sEZ"/>
                             <constraint firstItem="5Gt-pF-Ety" firstAttribute="top" secondItem="obR-0h-FFr" secondAttribute="top" id="Cf6-B9-Mn4"/>
+                            <constraint firstItem="cbM-rC-xMX" firstAttribute="top" secondItem="fyJ-7t-KWx" secondAttribute="bottom" constant="20" id="OoZ-7k-94v"/>
                             <constraint firstAttribute="trailing" secondItem="5Gt-pF-Ety" secondAttribute="trailing" id="Vf9-zq-cZj"/>
+                            <constraint firstItem="cbM-rC-xMX" firstAttribute="leading" secondItem="obR-0h-FFr" secondAttribute="leadingMargin" id="hRk-Wq-RBu"/>
                             <constraint firstAttribute="bottom" secondItem="5Gt-pF-Ety" secondAttribute="bottom" id="oT6-qK-aSY"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bgImageView" destination="5Gt-pF-Ety" id="FuK-ql-VwS"/>
+                        <outlet property="captionTextField" destination="cbM-rC-xMX" id="Lap-2X-wMY"/>
                         <segue destination="5sL-ZC-exi" kind="unwind" identifier="unwindToMain" unwindAction="unwindToMainFeed:" id="cz5-zI-Av0"/>
                     </connections>
                 </viewController>
