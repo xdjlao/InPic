@@ -18,9 +18,6 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     var currentUser:User?
     let image = Photo()
     var returnedImage = UIImage()
-    //    var returnedString = ""
-    
-    //    var didLoadImages: Bool!
     
     let loggedInUser = NSUserDefaults.standardUserDefaults()
     
@@ -31,72 +28,17 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tableView.rowHeight = 360
     }
     
-    override func viewWillAppear(animated: Bool) {
-        //        DataService.dataService.USER_REF.childByAppendingPath(self.loggedInUser.stringForKey("uid")).observeEventType(.Value, withBlock: { response in
-        //            let username = response.value.valueForKey("username") as? String
-        //
-        //            self.currentUser = User(uid: response.key, username: username!)
-        //            if let newAvatar = response.value.valueForKey("avatar") {
-        //                let avatarData = NSData(base64EncodedString: newAvatar as! String, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-        //                let avatarImage = UIImage(data: avatarData!)
-        //                self.currentUser?.avatar = avatarImage!
-        //            }
-        
-        DataService.dataService.POST_REF.observeEventType(.ChildAdded, withBlock: { (data) in
-            
-            let ref = DataService.dataService.PHOTO_REF.childByAppendingPath(data.key)
-            
-            ref.observeEventType(.Value, withBlock: { snapshot in
-                if let snaps = snapshot.children.allObjects as? [FDataSnapshot] {
-                    if snaps.count > 0 {
-                        let snap = snaps[0]
-                        if let imageString = snap.value["string"] as? String {
-                            let imageData = NSData(base64EncodedString: imageString, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
-                            let backImage = UIImage(data: imageData!)
-                            let post = Post()
-                            // post.image = backImage!
-                            if let time = data.value.objectForKey("timestamp") {
-                                post.timestamp = String(time)
-                            }
-                            // print(post.timestamp!)
-                            if let caption = data.value.objectForKey("caption") {
-                                post.caption = caption as? String
-                            }
-                            
-                            let photo = Photo()
-                            photo.image = backImage
-                            post.photo = photo
-                            
-                            self.postArray.append(post)
-                            self.sortByTimestamp()
-                            dispatch_async(dispatch_get_main_queue()){
-                                self.tableView.reloadData()
-                                // print("Reloaded table view")
-                                // print(self.postArray.count)
-                            }
-                        }
-                    }
-                }
-                
-                }, withCancelBlock: { error in
-                    print(error)
-            })
-            
-            }, withCancelBlock: { (error) in
-        })
-        //        })
-        //        DataService.dataService.BASE_REF.keepSynced(true)
-    }
-    
-    func sortByTimestamp() {
-        self.postArray.sortInPlace({$0.timestamp > $1.timestamp})
-    }
+    //    func sortByTimestamp() {
+    //        self.postArray.sortInPlace {
+    //            $0.timestamp!.compare($1.timestamp!) == .OrderedAscending
+    //        }
+    //    }
     
     override func viewDidAppear(animated: Bool) {
         if self.loggedInUser.stringForKey("uid") == nil {
             self.performSegueWithIdentifier("goLogInSegue", sender: nil)
         } else {
-            self.tableView.reloadData()
+            self.getFeed()
         }
     }
     
@@ -110,7 +52,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         
-        return (self.postArray.post.count) ?? 0
+        return self.postArray.count
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -121,11 +63,10 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MainFeedCell", forIndexPath: indexPath) as! MainFeedTableViewCell
         
-        // Configure the cell...
-        if let currentUser = self.user {
-            if currentUser.post.count > 0 {
-                cell.cellImageView.image = currentUser.post[indexPath.section].photo?.image
-            }
+        if let getPhoto = self.postArray[indexPath.section].photo {
+            cell.cellImageView.image = getPhoto.image
+        } else {
+            cell.cellImageView.image = UIImage(named: "image")
         }
         
         return cell
@@ -164,19 +105,27 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let post = self.postArray[section]
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 30))
         headerView.backgroundColor = UIColor(white: 1, alpha: 0.95)
         
         // Add a UILabel for the username here
+        
         let imageView = UIImageView(frame: CGRect(x: 10, y: 10, width: 30, height: 30))
-        imageView.image = self.getRoundImage((self.user?.post[section].photo?.image)!)
+        if let avatarUser = post.user {
+            let avImg = avatarUser.avatar
+            imageView.image = getRoundImage(avImg)
+        } else {
+            imageView.image = UIImage(named: "image")
+        }
         headerView.addSubview(imageView)
         
         let label = UILabel(frame: CGRect(x:50, y:10, width: self.view.frame.width - imageView.frame.width - 20, height: 30))
         
         label.font.fontWithSize(CGFloat(8))
         label.textAlignment = .Left
-        label.text = self.user!.username
+        
+        label.text = post.user?.username
         headerView.addSubview(label)
         
         return headerView
@@ -206,7 +155,7 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             if segue.identifier == "commentSegue" || segue.identifier == "likeSegue" {
                 if let buttonPoint = sender!.center {
                     if let indexPath = self.tableView.indexPathForRowAtPoint(buttonPoint) {
-                        let post = self.user?.post[indexPath.section]
+                        let post = self.postArray[indexPath.section]
                         if segue.identifier == "commentSegue" {
                             let commentsVC = segue.destinationViewController as! CommentsViewController
                             commentsVC.post = post
@@ -220,5 +169,72 @@ class MainFeedViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             
         }
+    }
+    
+    func getFeed() {
+        
+        DataService.dataService.PHOTO_REF.observeEventType(.ChildAdded, withBlock: { (response) in
+//            self.postArray = []
+            
+            let post = Post()
+            let photo = Photo()
+            
+            let imageData = NSData(base64EncodedString: (response.value["string"] as? String)!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+            let mainImg = UIImage(data: imageData!)
+            photo.image = mainImg
+            post.photo = photo
+            
+            let rootUrl = Firebase(url: "https://inpic-dev.firebaseio.com/posts/\((response.value.valueForKey("postID"))!)")
+            let url = NSURL(string: rootUrl.description+".json")
+            let session = NSURLSession.sharedSession()
+            let task = session.dataTaskWithURL(url!) { (data, response, error) -> Void in
+                do {
+                    
+                    let getUser = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                    
+                    let newRootUrl = Firebase(url: "https://inpic-dev.firebaseio.com/users/\((getUser["userID"])!)")
+                    let newUrl = NSURL(string: newRootUrl.description+".json")
+                    let newSession = NSURLSession.sharedSession()
+                    let newTask = newSession.dataTaskWithURL(newUrl!) { (userData, userResponse, userError) -> Void in
+                        do {
+                            
+                            let retrieveUser = try NSJSONSerialization.JSONObjectWithData(userData!, options: .AllowFragments) as! NSDictionary
+                            
+                            let username = retrieveUser["username"] as! String
+                            let getUser = User(uid: self.loggedInUser.stringForKey("uid")!, username: username)
+                            if let avatarExist = retrieveUser["avatar"] {
+                                let avatarData = NSData(base64EncodedString: (avatarExist as? String)!, options: NSDataBase64DecodingOptions.IgnoreUnknownCharacters)
+                                let avatarImg = UIImage(data: avatarData!)
+                                
+                                getUser.avatar = avatarImg!
+                            }
+                            post.user = getUser
+                            
+                            self.postArray.insert(post, atIndex: 0)
+                            
+                            dispatch_async(dispatch_get_main_queue()){
+                                self.tableView.reloadData()
+                            }
+                            
+                            
+                            
+                        } catch let newError as NSError {
+                            print(newError.localizedDescription)
+                        }
+                    }
+                    newTask.resume()
+                    
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
+            task.resume()
+            
+            //}
+            
+        })
+        
+        DataService.dataService.BASE_REF.keepSynced(true)
+        
     }
 }

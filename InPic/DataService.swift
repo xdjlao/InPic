@@ -46,26 +46,36 @@ class DataService {
     }
     
     func createNewPost(caption: String, timestamp: String, photo: String) {
-        let posts = ["caption":caption, "timestamp":timestamp]
         let userID = (NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String)!
-        POST_REF.childByAppendingPath(userID).childByAutoId().setValue(posts, withCompletionBlock: {
+        let posts = ["caption":caption, "timestamp":timestamp, "userID":userID]
+        POST_REF.childByAutoId().setValue(posts, withCompletionBlock: {
             (error:NSError?, ref:Firebase!) in
-            if (error != nil) {
-                print("Data could not be saved.")
-            } else {
+            if (error == nil) {
+                let postd = [ref.key: "true"]
+                self.USER_REF.childByAppendingPath(userID).childByAppendingPath("posts").updateChildValues(postd)
                 self.createNewPhoto(photo, postid: ref.key)
             }
         })
     }
     
     func createNewPhoto(photo: String, postid: String) {
-        let photos = ["string": photo]
-        PHOTO_REF.childByAppendingPath(postid).childByAutoId().setValue(photos)
+        let photos = ["string": photo, "postID": postid]
+        PHOTO_REF.childByAutoId().setValue(photos, withCompletionBlock: {
+            (error:NSError?, ref:Firebase!) in
+            if (error == nil) {
+                self.updatePost(ref.key, postid: postid)
+            }
+        })
     }
     
     func updateProfileImage(photo: String) {
         let avatar = ["avatar": photo]
         let userID = (NSUserDefaults.standardUserDefaults().valueForKey("uid") as? String)!
         USER_REF.childByAppendingPath(userID).updateChildValues(avatar)
+    }
+    
+    func updatePost(photoid: String, postid: String) {
+        let post = ["photoID":photoid]
+        POST_REF.childByAppendingPath(postid).updateChildValues(post)
     }
 }

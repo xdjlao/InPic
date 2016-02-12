@@ -13,4 +13,5 @@ class Post: NSObject {
     var caption:String?
     var timestamp:String?
     var photo: Photo?
+    var user: User?
 }

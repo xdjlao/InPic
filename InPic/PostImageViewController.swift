@@ -50,7 +50,7 @@ class PostImageViewController: UIViewController {
     }
     
     func getCroppedImage(image: UIImage) -> UIImage {
-        let resizedImage = Toucan(image: image).resize(CGSize(width: 1080, height: 1080), fitMode: Toucan.Resize.FitMode.Crop).image
+        let resizedImage = Toucan(image: image).resize(CGSize(width: 500, height: 500), fitMode: Toucan.Resize.FitMode.Crop).image
         return resizedImage
     }
 
